@@ -11,7 +11,6 @@ const PodcastSchema = new mongoose.Schema<Podcast>({
     dataPublicacao: { Date },
     tags: { String },
     ativo: { Boolean }
-
 });
 
-export const PodcastRepository = mongoose.model<Podcast>("podcast", PodcastSchema);
+export const PodcastRepository = mongoose.model<Podcast>("podcasts", PodcastSchema);

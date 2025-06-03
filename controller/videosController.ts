@@ -7,7 +7,7 @@ import { VideosService } from "../services/videosService";
 export class VideosController {
 
     constructor(@inject('IVideosService') private _service: IVideosService) {
-        this._service = new VideosService();
+        // this._service = new VideosService();
     }
 
     async get(request: Request, response: Response) {

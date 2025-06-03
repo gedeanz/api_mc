@@ -14,7 +14,7 @@ export class GaleriaService implements IGaleriaService {
         let result = new Result<Galeria>();
         result.Page = page;
         result.Qtd = qtd;
-        result.Total = await GaleriaRepository.count({});
+        result.Total = await GaleriaRepository.countDocuments({});
         result.Data = await GaleriaRepository.find({}).skip((page* qtd) - qtd).limit(qtd);
         return result;
     }

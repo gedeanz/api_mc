@@ -1,14 +1,12 @@
+import { Request, Response } from "express";
 import { injectable, inject } from "tsyringe";
 import { IPodcastService } from "../contracts/iPodcastService";
-import { Request, Response } from "express";
-import { PodcastService } from "../services/podcastService";
+
 
 @injectable()
 export class PodcastController {
 
-    constructor(@inject('IPodcastService') private _service: IPodcastService) {
-        this._service = new PodcastService();
-    }
+    constructor(@inject('IPodcastService') private _service: IPodcastService) { }
 
     async get(request: Request, response: Response) {
         try {
@@ -26,10 +24,10 @@ export class PodcastController {
         try {
             const _id = request.params.id;
             let result = await this._service.get(_id);
-            response.status(260).json({ result });
+            response.status(200).json({ result });
 
         } catch (error) {
-            response.status(500).json({ error: error.message || error.tostring() });
+            response.status(500).json({ error: error.message || error.toString() });
         }
     }
 }

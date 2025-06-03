@@ -6,7 +6,7 @@ import { Request, Response } from "express";
 @injectable()
 export class NewsController {
     constructor(@inject('INewsService') private _service: INewsService) {
-        this ._service = new NewsService();
+        // this ._service = new NewsService();
     }
 
     async get(request: Request, response: Response) {

@@ -15,7 +15,7 @@ export class VideosService implements IVideosService {
         let result = new Result<Videos>();
         result.Page = page;
         result.Qtd = qtd;
-        result.Total = await VideosRepository.count({});
+        result.Total = await VideosRepository.countDocuments({});
         result.Data = await VideosRepository.find({}).skip((page * qtd) - qtd).limit(qtd);
         return result;
     }

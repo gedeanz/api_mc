@@ -7,7 +7,7 @@ import { GaleriaService } from "../services/galeriaService";
 export class GaleriaController {
 
     constructor(@inject('IGaleriaService') private _service: IGaleriaService) {
-        this._service = new GaleriaService();
+        // this._service = new GaleriaService();
     }
     
     async get(request: Request, response: Response) {

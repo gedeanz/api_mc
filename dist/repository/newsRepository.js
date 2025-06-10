@@ -16,4 +16,4 @@ const NewsSchema = new mongoose_1.default.Schema({
     link: { type: String },
     ativo: { type: Boolean }
 });
-exports.NewsRepository = mongoose_1.default.model("News", NewsSchema, "news");
+exports.NewsRepository = mongoose_1.default.model("news", NewsSchema);

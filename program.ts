@@ -1,6 +1,12 @@
-import StartUp from "./startUp";
+// program.ts
+import { app, db } from "./startUp";
 
-let port = "5000";
-StartUp.app.listen(port, function () {
-    console.log(`Servidor rodando na porta: ${port}`);
-});
+async function main() {
+    await db.createConnection();
+    let port = "5000";
+    app.listen(port, () => {
+        console.log(`Servidor rodando na porta: ${port}`);
+    });
+}
+
+main();

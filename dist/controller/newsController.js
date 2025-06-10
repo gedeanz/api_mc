@@ -34,7 +34,7 @@ let NewsController = class NewsController {
                 const page = request.params.page ? parseInt(request.params.page) : 1;
                 const qtd = request.params.qtd ? parseInt(request.params.qtd) : 10;
                 let result = yield this._service.getAll(page, qtd);
-                response.status(260).json({ result });
+                response.status(200).json({ result });
             }
             catch (error) {
                 response.status(500).json({ error: error.message || error.tostring() });
